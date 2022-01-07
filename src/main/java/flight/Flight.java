@@ -94,6 +94,7 @@ public class Flight {
     public void addPassenger(Passenger passenger) {
         if (this.passengerCount() < getPlaneCapacity()) {
             this.passengers.add(passenger);
+            passenger.addFlight(this.flightNumber);
         }
     }
 

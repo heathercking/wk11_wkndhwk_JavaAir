@@ -134,6 +134,12 @@ public class FlightTest {
         assertEquals(1, flight.getTotalAvailableSeats());
     }
 
+    @Test
+    public void canAssignFlightToPassengerUponBooking() {
+        flight.addPlane(plane);
+        flight.addPassenger(passenger1);
+        assertEquals("BA1234", passenger1.getFlight());
+    }
 
 
 

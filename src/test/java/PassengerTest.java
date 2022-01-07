@@ -35,4 +35,9 @@ public class PassengerTest {
         assertEquals(2, passenger.getNumberOfBags());
     }
 
+    @Test
+    public void hasFlightProperty() {
+        assertEquals("", passenger.getFlight());
+    }
+
 }
