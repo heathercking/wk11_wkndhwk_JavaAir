@@ -99,6 +99,10 @@ public class Flight {
         return this.plane.getCapacityFromEnum();
     }
 
+    public int getPlaneTotalWeight() {
+        return this.plane.getTotalWeightFromEnum();
+    }
+
     public int getTotalAvailableSeats() {
         return this.getPlaneCapacity() - this.passengers.size();
     }

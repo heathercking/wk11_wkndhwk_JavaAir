@@ -113,6 +113,12 @@ public class FlightTest {
     }
 
     @Test
+    public void canGetPlaneTotalWeight() {
+        flight.addPlane(plane);
+        assertEquals(80, flight.getPlaneTotalWeight());
+    }
+
+    @Test
     public void canGetTotalAvailableSeats() {
         flight.addPlane(plane);
         flight.addPassenger(passenger1);
