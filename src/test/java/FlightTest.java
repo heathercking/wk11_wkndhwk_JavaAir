@@ -107,6 +107,15 @@ public class FlightTest {
     }
 
     @Test
+    public void canNotAddPassengerIfFullyBooked() {
+        flight.addPlane(plane);
+        flight.addPassenger(passenger1);
+        flight.addPassenger(passenger2);
+        flight.addPassenger(passenger3);
+        assertEquals(2, flight.passengerCount());
+    }
+
+    @Test
     public void canGetPlaneCapacity() {
         flight.addPlane(plane);
         assertEquals(2, flight.getPlaneCapacity());

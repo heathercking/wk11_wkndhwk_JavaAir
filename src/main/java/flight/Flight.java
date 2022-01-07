@@ -92,7 +92,9 @@ public class Flight {
     }
 
     public void addPassenger(Passenger passenger) {
-        this.passengers.add(passenger);
+        if (this.passengerCount() < getPlaneCapacity()) {
+            this.passengers.add(passenger);
+        }
     }
 
     public int getPlaneCapacity() {
