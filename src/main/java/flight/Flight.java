@@ -7,6 +7,8 @@ import staff.CabinCrewMember;
 import staff.Pilot;
 
 import java.util.ArrayList;
+import java.util.Random;
+
 
 public class Flight {
 
@@ -18,6 +20,7 @@ public class Flight {
     private ArrayList<Pilot> pilots;
     private ArrayList<CabinCrewMember> cabinCrew;
     private ArrayList<Passenger> passengers;
+    private Random rand = new Random();
 
     public Flight(String flightNumber, String destination, String departureAirport, String departureTime) {
         this.flightNumber = flightNumber;
@@ -95,6 +98,8 @@ public class Flight {
         if (this.passengerCount() < getPlaneCapacity()) {
             this.passengers.add(passenger);
             passenger.addFlight(this.flightNumber);
+            int seatNum = rand.nextInt(2);
+            passenger.setSeatNumber(seatNum += 1);
         }
     }
 

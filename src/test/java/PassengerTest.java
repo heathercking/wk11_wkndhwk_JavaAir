@@ -40,4 +40,8 @@ public class PassengerTest {
         assertEquals("", passenger.getFlight());
     }
 
+    @Test
+    public void hasSeatNumberProperty() {
+        assertEquals(0, passenger.getSeatNumber());
+    }
 }
