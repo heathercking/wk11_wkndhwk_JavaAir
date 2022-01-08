@@ -9,6 +9,8 @@ import staff.CabinCrewMember;
 import staff.Pilot;
 import staff.Rank;
 
+import java.time.LocalTime;
+
 import static org.junit.Assert.assertEquals;
 
 public class FlightManagerTest {
@@ -35,7 +37,7 @@ public class FlightManagerTest {
         passenger2 = new Passenger("Betty Jones", 1);
         passenger3 = new Passenger("Johnny Jones", 1);
         passenger4 = new Passenger("Bill Jones", 1);
-        flight = new Flight("BA1234", "London", "Edinburgh", "17:00");
+        flight = new Flight("BA1234", "London", "Edinburgh", LocalTime.of(17,00));
     }
 
     @Test

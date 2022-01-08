@@ -6,6 +6,7 @@ import plane.PlaneType;
 import staff.CabinCrewMember;
 import staff.Pilot;
 
+import java.time.LocalTime;
 import java.util.ArrayList;
 import java.util.Random;
 
@@ -15,14 +16,14 @@ public class Flight {
     private String flightNumber;
     private String destination;
     private String departureAirport;
-    private String departureTime;
+    private LocalTime departureTime;
     private Plane plane;
     private ArrayList<Pilot> pilots;
     private ArrayList<CabinCrewMember> cabinCrew;
     private ArrayList<Passenger> passengers;
     private Random rand = new Random();
 
-    public Flight(String flightNumber, String destination, String departureAirport, String departureTime) {
+    public Flight(String flightNumber, String destination, String departureAirport, LocalTime departureTime) {
         this.flightNumber = flightNumber;
         this.destination = destination;
         this.departureAirport = departureAirport;
@@ -58,11 +59,11 @@ public class Flight {
         this.departureAirport = departureAirport;
     }
 
-    public String getDepartureTime() {
+    public LocalTime getDepartureTime() {
         return departureTime;
     }
 
-    public void setDepartureTime(String departureTime) {
+    public void setDepartureTime(LocalTime departureTime) {
         this.departureTime = departureTime;
     }
 

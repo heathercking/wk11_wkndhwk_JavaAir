@@ -8,6 +8,8 @@ import staff.CabinCrewMember;
 import staff.Pilot;
 import staff.Rank;
 
+import java.time.LocalTime;
+
 import static org.junit.Assert.assertEquals;
 
 public class FlightTest {
@@ -32,7 +34,7 @@ public class FlightTest {
         passenger2 = new Passenger("Betty Jones", 1);
         passenger3 = new Passenger("Johnny Jones", 1);
         passenger4 = new Passenger("Bill Jones", 1);
-        flight = new Flight("BA1234", "London", "Edinburgh", "17:00");
+        flight = new Flight("BA1234", "London", "Edinburgh", LocalTime.of(17,00));
     }
 
 
@@ -71,13 +73,13 @@ public class FlightTest {
 
     @Test
     public void hasDepartureTime() {
-        assertEquals("17:00", flight.getDepartureTime());
+        assertEquals(LocalTime.of(17,00), flight.getDepartureTime());
     }
 
     @Test
     public void canSetDepartureTime() {
-        flight.setDepartureTime("12:00");
-        assertEquals("12:00", flight.getDepartureTime());
+        flight.setDepartureTime(LocalTime.of(12,00));
+        assertEquals(LocalTime.of(12,00), flight.getDepartureTime());
     }
 
     @Test
@@ -101,6 +103,7 @@ public class FlightTest {
 
     @Test
     public void canAddPassengers() {
+        flight.addPlane(plane);
         flight.addPassenger(passenger1);
         flight.addPassenger(passenger2);
         assertEquals(2, flight.passengerCount());
